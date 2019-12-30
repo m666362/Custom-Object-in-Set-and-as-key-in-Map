@@ -23,25 +23,25 @@ public class MyClass {
 
     private static void set() {
         heading( "Set" );
-        Set<String> sets = new LinkedHashSet<>();
-        sets.add( "Alpha" );
-        sets.add( "Benjamin" );
-        sets.add( "Tesla" );
-        for (String key:sets){
+        Set<Person> sets = new LinkedHashSet<>();
+        sets.add( new Person( "Jhon", 3 ));
+        sets.add( new Person( "Jack", 3 ));
+        sets.add( new Person( "Alpha", 3 ));
+        for (Person key:sets){
             System.out.println( key );
         }
     }
 
     private static void hashMap() {
         heading( "hashMap" );
-        Map<String, Integer> hashmap = new HashMap<>(  );
-        hashmap.put( "Jack", 5 );
-        hashmap.put( "Jhon", 3 );
-        hashmap.put( "Alpha", 1 );
-        hashmap.put( "Tesla", 4 );
-        hashmap.put( "Benjamin", 2 );
-        hashmap.put( "Alpha", 2 );
-        for (String key:hashmap.keySet()){
+        Map<Person, Integer> hashmap = new HashMap<>(  );
+        hashmap.put( new Person( "Jhon", 3 ),  5 );
+        hashmap.put( new Person( "Jack", 3 ), 3 );
+        hashmap.put( new Person( "Alpha", 3 ), 1 );
+        hashmap.put( new Person( "Tesla", 3 ), 4 );
+        hashmap.put( new Person( "Benjamin", 3 ), 2 );
+        hashmap.put( new Person( "Alpha", 3 ), 2 );
+        for (Person key:hashmap.keySet()){
             System.out.println( key + " : " + hashmap.get( key ));
         }
     }
