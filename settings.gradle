@@ -1,0 +1,2 @@
+include ':app', ':using_custom_object_libs'
+rootProject.name='Using Custom Object'
