@@ -1,7 +1,10 @@
 package org.richit.using_custom_object_libs;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -18,7 +21,32 @@ public class MyClass {
 
         hashMap();
         set();
+        sort();
+
         heading("Programme Ended");
+    }
+
+    private static void sort() {
+        heading( "sort" );
+        List<String> list = new ArrayList<>(  );
+        list.add( "Alpha" );
+        list.add( "Jhon" );
+        list.add( "Benjamin" );
+        list.add( "Siemen" );
+        Collections.sort( list );   //sort alphabetically
+        for (String item:list){
+            System.out.println(item);
+        }
+        heading( "sort again" );
+        Collections.sort( list, new StringLengthComparator() );
+        for (String item: list){
+            System.out.println(item);
+        }
+        heading( "AlphaComparator" );
+        Collections.sort( list, new AlphabeticallyComparator() );
+        for (String item:list){
+            System.out.println(item);
+        }
     }
 
     private static void set() {
@@ -41,6 +69,7 @@ public class MyClass {
         hashmap.put( new Person( "Tesla", 3 ), 4 );
         hashmap.put( new Person( "Benjamin", 3 ), 2 );
         hashmap.put( new Person( "Alpha", 3 ), 2 );
+
         for (Person key:hashmap.keySet()){
             System.out.println( key + " : " + hashmap.get( key ));
         }
