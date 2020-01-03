@@ -22,9 +22,29 @@ public class MyClass {
         hashMap();
         set();
         sort();
+        List<Man> items = new ArrayList<>(  );
+        doSomethingInteresting(items);
 
         heading("Programme Ended");
     }
+
+    private static void doSomethingInteresting(List<Man> items) {
+        heading( "doSomethingInteresting" );
+        items.add( new Man( "Jack" ) );
+        items.add( new Man( "Alpha" ) );
+        items.add( new Man( "Siemen" ) );
+        items.add( new Man( "Jhon" ) );
+        Collections.sort( items, new AlphabeticallyComparator());
+        for (Man key:items){
+            System.out.println(key);
+        }
+        Collections.sort( items, new StringLengthComparator() );
+        for (Man key:items){
+            System.out.println(key);
+        }
+
+    }
+
 
     private static void sort() {
         heading( "sort" );
@@ -42,7 +62,7 @@ public class MyClass {
         for (String item: list){
             System.out.println(item);
         }
-        heading( "AlphaComparator" );
+        heading( "Alphabetically Comparator" );
         Collections.sort( list, new AlphabeticallyComparator() );
         for (String item:list){
             System.out.println(item);
